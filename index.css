@@ -1,0 +1,246 @@
+body   {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body p {
+    margin: 0;
+}
+
+.header {
+    position: absolute;
+    display: flex;
+    padding: 40px 56px;
+    gap: 959px;
+}
+
+.home {
+    cursor: pointer;
+}
+
+.btn_form {
+    cursor: pointer;
+    padding: 8px 32px;
+    color: white;
+    border: none;
+    background: #156963;
+    font-family: 'Nunito',sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.btn_form:hover {
+    padding: 7px 31px;
+    background: white;
+    color: #156963;
+    border: 1px solid #156963;
+}
+
+.btn_form:active {
+
+}
+
+.welcome {
+    display: flex;
+    margin-bottom: 140px;
+}
+
+.welcome > img {
+    max-width: 608px;
+    width: 100%;
+}
+
+.start {
+    max-width: 608px;
+    width: 100%;
+}
+
+.welcome_words {
+    max-width: 520px;
+    width: 100%;
+    padding: 185px 72px 110px 77px;
+}
+
+.welcome_words a {
+    margin-top: 24px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #2C1500;
+}
+
+.navigation {
+    display: flex;
+    width: 640px;
+}
+
+.prev {
+    padding: 39px 49px 39px 77px;
+    width: 50%;
+}
+
+.btn_prev {
+    margin-bottom: 14px;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+.next {
+    color: white;
+    background: #156963;
+    padding: 39px 49px 39px 77px;
+    width: 50%;
+}
+
+.next span {
+    color: white;
+}
+
+.btn_next {
+    margin-bottom: 14px;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+.benefits {
+    display: flex;
+    gap:32px;
+    margin-bottom: 84px;
+}
+
+.point {
+    max-width: 268px;
+    width: 100%;
+    max-height: 155px;
+    height: 100%;
+    padding: 21px 16px;
+    border: 1px solid #E0E0E0;
+}
+
+.point:hover {
+    border: 1px solid #000000;
+}
+
+.featured_plants {
+    margin-bottom: 84px;
+}
+
+.featured_plants hr {
+    margin-bottom: 24px;
+}
+
+.btn_lists {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn_lists p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.btn_lists ul {
+    cursor: pointer;
+    display: flex;
+    gap: 15px;
+    padding: 8px 12px;
+    border: 1px solid #E0E0E0;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+    align-items: center;
+}
+
+.btn_lists ul:hover {
+    border: 1px solid #000000;
+}
+
+.lists {
+    display: flex;
+    gap: 24px;
+}
+
+.list img {
+    background: rgb(208, 208, 208);
+    margin-bottom: 8px;
+}
+
+.list p {
+    margin-bottom: 8px;
+}
+
+.list {
+    cursor: pointer;
+}
+
+.header1 {
+    font-weight: 500;
+    font-size: 68px;
+    line-height: 83px;
+    color: #156963;
+    text-align: left;
+}
+
+.header2 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    color: #156963;
+}
+
+.header3 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #156963;
+}
+
+.description {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 16px;
+    color: #2C1500;
+}
+
+.designation {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+.designation_2 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #2C1500;
+    opacity: 0.8;
+}
+
+.designation_3 {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #000000;
+}
