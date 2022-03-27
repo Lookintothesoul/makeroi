@@ -9,14 +9,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
     </style>
-    <script src="index.js"></script>
     <link rel="stylesheet" href="index.css">
     <title>Plant Shop</title>
 </head>
 <body>
     <section class="header">
         <img class="home" src="./public/img/home.png" alt="">
-        <button class="btn_form">Форма</button>
+        <button id="btn_form" class="btn_form">Форма</button>
     </section>
     <section class="welcome">
         <img src="./public/img/welcome_img.png" alt="welcome!">
@@ -133,5 +132,29 @@
             </div>
         </div>
     </section>
+    <div id="layer">
+        <div id="todos"></div>
+        <div class="form">
+            <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.1309 1.68872L1.19971 12.6199" stroke="#B5B8BE" stroke-width="1.61527" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.1309 12.6199L1.19971 1.68872" stroke="#B5B8BE" stroke-width="1.61527" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <img src="./public/img/logo_form.png" alt="">
+            <p>Форма сайта</p>
+            <span>
+                Lorem ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry
+            </span>
+            <form class="form_sub" action="">
+                <input id="name" type="text" placeholder="Имя"/>
+                <input id="phone" type="text" placeholder="Номер телефона"/>
+                <div class="btns">
+                    <button id="btn_cancel" type="reset">Отменить</button>
+                    <button id="btn_load"type="submit">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>

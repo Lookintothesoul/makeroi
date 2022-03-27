@@ -81,6 +81,7 @@ body p {
 }
 
 .prev {
+    cursor: pointer;
     padding: 39px 49px 39px 77px;
     width: 50%;
 }
@@ -93,6 +94,7 @@ body p {
 }
 
 .next {
+    cursor: pointer;
     color: white;
     background: #156963;
     padding: 39px 49px 39px 77px;
@@ -119,8 +121,7 @@ body p {
 .point {
     max-width: 268px;
     width: 100%;
-    max-height: 155px;
-    height: 100%;
+    height: fit-content;
     padding: 21px 16px;
     border: 1px solid #E0E0E0;
 }
@@ -243,4 +244,109 @@ body p {
     line-height: 20px;
     text-align: center;
     color: #000000;
+}
+
+.form {
+    position: fixed;
+    top: 15%;
+    left: 32%;
+    max-width: 470px;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 3px 4px 16px 4px rgba(155, 155, 155, 0.25);
+    border-radius: 8px;
+    padding: 40px;
+}
+
+.form svg {
+    cursor: pointer;
+    margin: 23px 23px 6px 95%;
+}
+
+.form p {
+    margin: 18px 0 8px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 121.5%;
+    color: #000000;
+}
+
+.form span {
+    margin-bottom: 38px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    line-height: 121.5%;
+    text-align: center;
+    letter-spacing: -0.025em;
+    color: #454444;
+}
+
+.form_sub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form_sub input {
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #DBDEDF;
+    box-sizing: border-box;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    width: 390px;
+    height: auto;
+}
+
+.btns {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 42px;
+}
+
+.btns button {
+    cursor: pointer;
+    padding: 8px 56px;
+    background: #FFFFFF;
+    border: 1px solid #CCE1FE;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+}
+
+.btns button:nth-child(2) {
+    background: #E8F2FF;
+}
+
+.btns button:nth-child(2):active {
+    background: white;
+}
+
+.btns button:nth-child(1):active {
+    background: #E8F2FF;
+}
+
+#layer {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #E5E5E5;
+    text-align: center;
+    z-index: 10;
+    overflow-y: hidden;
+}
+
+#layer::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
 }
