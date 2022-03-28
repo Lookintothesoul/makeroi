@@ -1,14 +1,25 @@
 const layer = document.getElementById('layer')
+const closeMark = document.getElementById('close_form')
 
 document.querySelector('button').addEventListener('click', () => {
+    const content = document.getElementById('content');
+    content.classList.add('form_1')
+    content.classList.remove('result')
     layer.style.display = 'block'
     document.querySelector('body').style.overflow = 'hidden'
 })
+
 layer.addEventListener('click', (e) => {
     if (e.target === layer) {
         layer.style.display = 'none'
         document.querySelector('body').style.overflow = 'auto'
     }
+})
+
+closeMark.addEventListener('click', (e) => {
+    e.stopPropagation();
+    layer.style.display = 'none'
+    document.querySelector('body').style.overflow = 'auto'
 })
 
 const closeBtn = document.getElementById('btn_cancel')
@@ -22,21 +33,33 @@ closeBtn.addEventListener('click', (e) => {
 
 const form = document.querySelector('.form_sub')
 
-form.addEventListener('submit', function (event) {
+form.addEventListener('submit', event => {
     event.preventDefault()
-    let name = document.getElementById('name').value
-    if (!validateName(name)){
-        alert('Введите корректное имя!')
-    }else{
-        form.addEventListener('submit', function () {
-            let phone = document.getElementById('phone').value
-            if (!validatePhone(phone)){
-                alert('Введите корректный телефон!')
-            }else{
-                load()
-            }
-        })
+    let isFormValid = true
+
+    let name = document.getElementById('name');
+
+    if (validateName(name.value)) {
+        name.classList.remove('error')
+    } else {
+        name.classList.add('error')
+        isFormValid = false
     }
+
+    let phone = document.getElementById('phone');
+
+    if (validatePhone(phone.value)) {
+        phone.classList.remove('error')
+    } else {
+        phone.classList.add('error')
+        isFormValid = false
+    }
+
+    if (isFormValid) {
+        clear()
+        load()
+    }
+
 })
 
 function validateName(name){
@@ -50,15 +73,30 @@ function validatePhone(phone){
 }
 
 async function load() {
+    const content = document.getElementById('content');
+    content.classList.remove('form_1')
+    content.classList.add('loading')
+
     const url = 'https://jsonplaceholder.typicode.com/todos';
     const response = await fetch(url);
-    const data = await response.json();
-    const ul = document.querySelector('todos');
-    const html = data.map(function (item) {
-        if (item.id >= 5 && item.completed == 'false')
-            return '<li>' + item.userId + ' ' + item.id + ' ' + item.title + ' ' + item.completed + '</li>'
-    });
 
+    const data = await response.json();
+
+
+    const ul = document.querySelector('.todos');
+    let html = data.map(item => {
+        if (item.userId === 5 && !item.completed)
+            return '<li>' + 'userID: ' + item.userId + ' id: ' + item.id + ' title: ' + item.title + ' completed: ' + item.completed + '</li>'
+    });
     ul.insertAdjacentHTML('afterbegin', html.join(' '))
+
+    content.classList.remove('loading')
+    content.classList.add('result')
 }
 
+function clear() {
+    const ul = document.querySelector('.todos');
+    while(ul.firstChild) {
+        ul.removeChild(ul.firstChild)
+    }
+}
