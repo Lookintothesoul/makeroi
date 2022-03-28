@@ -88,13 +88,13 @@ async function load() {
                 return '<li>' + 'userID: ' + item.userId + ' id: ' + item.id + ' title: ' + item.title + ' completed: ' + item.completed + '</li>'
         });
         ul.insertAdjacentHTML('afterbegin', html.join(' '))
-        content.classList.remove('loading')
         content.classList.add('result')
     }catch (e) {
         const err = document.querySelector('.catch');
         err.insertAdjacentHTML('afterbegin', `${e}`)
-        content.classList.remove('loading')
         content.classList.add('catch')
+    } finally {
+        content.classList.remove('loading')
     }
 }
 
