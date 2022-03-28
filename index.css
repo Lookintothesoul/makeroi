@@ -374,6 +374,10 @@ body p {
     vertical-align: middle;
 }
 
+.catch {
+    color: red;
+}
+
 .content:not(.loading) > .loader {
     display: none;
 }
@@ -383,6 +387,9 @@ body p {
 }
 
 .content:not(.form_1) > .form_1 {
+    display: none;
+}
+.content:not(.catch) > .catch {
     display: none;
 }
 

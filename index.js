@@ -5,6 +5,7 @@ document.querySelector('button').addEventListener('click', () => {
     const content = document.getElementById('content');
     content.classList.add('form_1')
     content.classList.remove('result')
+    content.classList.remove('catch')
     layer.style.display = 'block'
     document.querySelector('body').style.overflow = 'hidden'
 })
@@ -74,29 +75,36 @@ function validatePhone(phone){
 
 async function load() {
     const content = document.getElementById('content');
-    content.classList.remove('form_1')
-    content.classList.add('loading')
+        content.classList.remove('form_1')
+        content.classList.add('loading')
+    try {
+        const url = 'https://jsonplaceholder.typicode.com/todos';
+        const response = await fetch(url);
+        const data = await response.json();
 
-    const url = 'https://jsonplaceholder.typicode.com/todos';
-    const response = await fetch(url);
-
-    const data = await response.json();
-
-
-    const ul = document.querySelector('.todos');
-    let html = data.map(item => {
-        if (item.userId === 5 && !item.completed)
-            return '<li>' + 'userID: ' + item.userId + ' id: ' + item.id + ' title: ' + item.title + ' completed: ' + item.completed + '</li>'
-    });
-    ul.insertAdjacentHTML('afterbegin', html.join(' '))
-
-    content.classList.remove('loading')
-    content.classList.add('result')
+        const ul = document.querySelector('.todos');
+        let html = data.map(item => {
+            if (item.userId === 5 && !item.completed)
+                return '<li>' + 'userID: ' + item.userId + ' id: ' + item.id + ' title: ' + item.title + ' completed: ' + item.completed + '</li>'
+        });
+        ul.insertAdjacentHTML('afterbegin', html.join(' '))
+        content.classList.remove('loading')
+        content.classList.add('result')
+    }catch (e) {
+        const err = document.querySelector('.catch');
+        err.insertAdjacentHTML('afterbegin', `${e}`)
+        content.classList.remove('loading')
+        content.classList.add('catch')
+    }
 }
 
 function clear() {
     const ul = document.querySelector('.todos');
     while(ul.firstChild) {
         ul.removeChild(ul.firstChild)
+    }
+    const err = document.querySelector('.catch');
+    while(err.firstChild) {
+        err.removeChild(err.firstChild)
     }
 }
